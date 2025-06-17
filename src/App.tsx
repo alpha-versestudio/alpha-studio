@@ -1,31 +1,32 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import About from './pages/About';
-import Novels from './pages/Novels';
-import Contact from './pages/Contact';
-import Success from './pages/Success';
-import BlueWolf from './pages/BlueWolf';
-import Join from './pages/Join';
-import Purchase from './pages/Purchase';
-import { LanguageProvider } from './contexts/LanguageContext';
-import './App.css';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import { LanguageProvider } from "./contexts/LanguageContext";
+
+// صفحات افتراضية (يمكنك تعديلها لاحقاً)
+const About = React.lazy(() => import("./pages/About"));
+const Novels = React.lazy(() => import("./pages/Novels"));
+const Contact = React.lazy(() => import("./pages/Contact"));
+const BlueWolf = React.lazy(() => import("./pages/BlueWolf"));
+const Join = React.lazy(() => import("./pages/Join"));
+const Purchase = React.lazy(() => import("./pages/Purchase"));
+
 
 function App() {
   return (
     <LanguageProvider>
-      <Router basename="/alpha-studio">
+      <React.Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/novels" element={<Novels />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/success" element={<Success />} />
           <Route path="/blue-wolf" element={<BlueWolf />} />
           <Route path="/join" element={<Join />} />
-          <Route path="/purchase/:type" element={<Purchase />} />
+          <Route path="/purchase/blue-wolf" element={<Purchase />} />
+
         </Routes>
-      </Router>
+      </React.Suspense>
     </LanguageProvider>
   );
 }
