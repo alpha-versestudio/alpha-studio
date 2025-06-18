@@ -94,13 +94,13 @@ const Purchase = () => {
               <div className="space-y-6">
                 <div className="flex flex-col items-center">
                   <img 
-                    src="/alpha-studio/blue/first.png" 
+                    src="/blue/first.png" 
                     alt={language === 'ar' ? 'غلاف الذئب الأزرق' : 'The Blue Wolf Cover'} 
                     className="w-48 h-auto rounded-lg shadow-xl mb-4"
                   />
                   <div className="text-center">
                     <h2 className="text-2xl font-bold text-yellow-500 mb-2">
-                      {language === 'ar' ? '١٤٩ جنيه' : '149 EGP'}
+                      {language === 'ar' ? '١٩٩ جنيه' : '199 EGP'}
                     </h2>
                     <p className="text-gray-400">
                       {language === 'ar' ? 'شامل الشحن' : 'Including shipping'}
