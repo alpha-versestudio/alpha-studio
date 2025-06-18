@@ -25,7 +25,7 @@ const About = () => {
             className="absolute inset-0"
           >
             <img 
-              src="/osos/vocc.png" 
+              src="/alpha-studio/osos/vocc.png" 
               alt="Alpha Studio" 
               className="w-full h-full object-cover object-center transform scale-105 transition-transform duration-10000 hover:scale-110"
             />

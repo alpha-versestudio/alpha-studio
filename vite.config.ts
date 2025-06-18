@@ -4,7 +4,7 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: (process.env.NODE_ENV === "development" || mode === "development") ? "/" : "/alpha-studio/",
+  base: (process.env.NODE_ENV === "development" || mode === "development") ? "/alpha-studio/" : "/alpha-studio/",
   server: {
     host: "::",
     port: 8080,
